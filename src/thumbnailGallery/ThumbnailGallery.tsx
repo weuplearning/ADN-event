@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Webinar } from "../type";
 import moment from "moment";
 import "./thumbnail-gallery.css";
 
@@ -7,30 +8,13 @@ type Props = {
   isProchainementClicked: boolean;
 };
 
-type Webinar = {
-  title: string;
-  date: string;
-  description: string;
-  speaker: {
-    name: string;
-    position: string;
-  };
-  tag: string;
-  image: string;
-};
+// Thumbnail gallery component that displays webinars
+const ThumbnailGallery: React.FC<Props> = ({ webinars }) => {
 
-const ThumbnailGallery: React.FC<Props> = ({ webinars, isProchainementClicked }) => {
-  const [filteredWebinars, setFilteredWebinars] = useState<Webinar[]>([]);
-
-  useEffect(() => {
-    const now = moment();
-    const filtered = isProchainementClicked ? webinars.filter(webinar => moment(webinar.date).isAfter(now)) : webinars;
-    setFilteredWebinars(filtered);
-  }, [isProchainementClicked, webinars]);
-
+  // Render the thumbnail gallery with the filtered webinars
   return (
     <div className="thumbnail-gallery">
-      {filteredWebinars.map((webinar) => (
+      {webinars.map((webinar) => (
         <div className="thumbnail" key={webinar.title}>
           <img className="thumbnail__image" src={webinar.image} alt={webinar.title} />
           <div className="thumbnail__content">

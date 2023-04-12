@@ -1,32 +1,25 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-// import webinarData from '../data/webinarData.json'
+import { Webinar } from "../type";
 import "./banner.css";
 
 type Props = {
   webinarData: Webinar[];
 };
 
-type Webinar = {
-  title: string;
-  date: string;
-  description: string;
-  speaker: {
-    name: string;
-    position: string;
-  };
-  tag: string;
-  image: string;
-};
 
+// Banner component that displays information about the next webinar
 const Banner: React.FC<Props> = ({ webinarData }) => {
+  // State for the list of webinars and the next webinar
   const [webinars, setWebinars] = useState<Webinar[]>([]);
   const [nextWebinar, setNextWebinar] = useState<Webinar | null>(null);
 
+  // Load webinar data on component mount
   useEffect(() => {
     setWebinars(webinarData);
   }, []);
 
+  // Find the next webinar and set it to state whenever the webinars state changes
   useEffect(() => {
     const sortedWebinars = webinars.sort((a, b) =>
       moment(a.date).diff(moment(b.date))
@@ -37,12 +30,14 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
     setNextWebinar(next || last);
   }, [webinars]);
 
+  // Return null if there's no next webinar to display
   if (!nextWebinar) {
     return null;
   }
 
   const { title, tag, description, date, image } = nextWebinar;
 
+  // Render the banner with the next webinar's details
   return (
     <div className="container">
       <div className="left-block">
