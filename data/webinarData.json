@@ -1,0 +1,78 @@
+[
+    {
+      "title": "Introduction to Data Analysis with Python",
+      "date": "2022-01-15T14:00:00Z",
+      "description": "This webinar will teach you the basics of data analysis with Python, including data collection, data cleaning, and data visualization.",
+      "speaker": {
+        "name": "John Smith",
+        "position": "Data Scientist at ACME Corp"
+      },
+      "tag": "data analysis",
+      "image": "https://example.com/images/intro-data-analysis-python.jpg"
+    },
+    {
+      "title": "Improving User Experience on Your Website",
+      "date": "2022-02-05T10:00:00Z",
+      "description": "This webinar will cover strategies and tools to improve user experience on your website, including optimizing loading speed and user-centered design.",
+      "speaker": {
+        "name": "Alice Martin",
+        "position": "UX Designer at XYZ Agency"
+      },
+      "tag": "user experience",
+      "image": "https://example.com/images/improve-user-experience-website.jpg"
+    },
+    {
+      "title": "The Basics of Digital Marketing",
+      "date": "2022-03-20T16:00:00Z",
+      "description": "This webinar covers the key elements of digital marketing, including email marketing strategies, social media, and search engine optimization.",
+      "speaker": {
+        "name": "Sophie Dubois",
+        "position": "Digital Marketing Specialist at ABC Company"
+      },
+      "tag": "digital marketing",
+      "image": "https://example.com/images/basics-digital-marketing.jpg"
+    },
+    {
+      "title": "Introduction to Java Programming",
+      "date": "2022-04-10T11:00:00Z",
+      "description": "This webinar will teach you the basics of Java programming, including basic syntax and data manipulation.",
+      "speaker": {
+        "name": "Peter Smith",
+        "position": "Java Developer at DEF Inc."
+      },
+      "tag": "Java programming",
+      "image": "https://example.com/images/intro-java-programming.jpg"
+    },
+    {
+      "title": "Cybersecurity Trends in 2022",
+      "date": "2022-05-15T13:00:00Z",
+      "description": "This webinar will cover emerging cybersecurity trends in 2022, including emerging threats and security solutions.",
+      "speaker": {
+        "name": "Jack Martin",
+        "position": "Security Expert at GHI Company"
+      },
+      "tag": "cybersecurity",
+      "image": "https://example.com/images/cybersecurity-trends-2022.jpg"
+    },
+    {
+      "title": "Introduction to Data Science",
+      "date": "2023-06-20T09:00:00Z",
+      "description": "This webinar will introduce you to the field of data science, including the basics of statistical analysis and machine learning.",
+      "speaker": {
+        "name": "Karen Brown",
+        "position": "Data Scientist at JKL Corp"
+      },
+      "tag": "data science",
+      "image": "https://example.com/images/intro-data-science.jpg"
+    },
+    {
+      "title": "Building Scalable Web Applications with Node.js",
+      "date": "2022-07-10T14:00:00Z",
+      "description": "This webinar will teach you how to build scalable web applications using Node.js, including server-side JavaScript and database integration.",
+      "speaker": {
+        "name": "David Lee",
+        "position": "Full Stack Developer at MNO Inc."
+      },
+      "tag": "Node.js"
+    }
+]
