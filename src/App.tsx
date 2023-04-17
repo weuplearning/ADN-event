@@ -23,7 +23,7 @@ function App() {
       <Navigation onFilterWebinars={handleFilterWebinars} webinarData={webinarData} />
 
       {/* Thumbnail gallery component that displays webinars */}
-      <ThumbnailGallery webinars={webinars} isProchainementClicked={false} webinarData={webinarData} />
+      <ThumbnailGallery webinars={webinars} webinarData={webinarData} />
     </div>
   );
 }

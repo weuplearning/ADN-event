@@ -74,5 +74,38 @@
         "position": "Full Stack Developer at MNO Inc."
       },
       "tag": "Node.js"
-    }
+    },
+    {
+      "title":"React Native Bootcamp",
+      "date":"2023-05-01T09:00:00Z",
+      "description":"This bootcamp will teach you how to build mobile apps using React Native, including layout design and state management.",
+      "speaker":{
+          "name":"Sarah Johnson",
+          "position":"Front-End Developer at PQR Corp"
+      },
+      "tag":"bootcamp",
+      "image":"https://example.com/images/react-native-bootcamp.jpg"
+  },
+  {
+      "title":"Cloud Computing Bootcamp",
+      "date":"2022-08-15T10:00:00Z",
+      "description":"This bootcamp will introduce you to the fundamentals of cloud computing, including virtualization and containerization.",
+      "speaker":{
+          "name":"Mark Brown",
+          "position":"Cloud Solutions Architect at LMN Inc"
+      },
+      "tag":"bootcamp",
+      "image":"https://example.com/images/cloud-computing-bootcamp.jpg"
+  },
+  {
+      "title":"Full Stack Web Development Bootcamp",
+      "date":"2023-10-01T09:00:00Z",
+      "description":"This bootcamp will teach you how to build full-stack web applications using modern web technologies, including React, Node.js, and MongoDB.",
+      "speaker":{
+          "name":"John Doe",
+          "position":"Full-Stack Developer at ABC Company"
+      },
+      "tag":"bootcamp",
+      "image":"https://example.com/images/full-stack-web-development-bootcamp.jpg"
+  }
 ]
