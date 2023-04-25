@@ -1,0 +1,32 @@
+.dropdown-checkbox {
+    position: relative;
+    display: inline-block;
+    margin-right: 150px;
+  }
+  
+  .dropdown-checkbox__toggle {
+    cursor: pointer;
+  }
+  
+  .dropdown-checkbox__menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-checkbox__menu li {
+    padding: 8px 12px;
+  }
+  
+  .dropdown-checkbox__menu li label {
+    cursor: pointer;
+    user-select: none;
+  }
+  

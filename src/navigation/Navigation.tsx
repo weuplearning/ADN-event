@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./navigation.css";
 import { Webinar } from "../type";
+import DropdownCheckbox from '../DropdownCheckbox/DropdownCheckbox';
 
 type Props = {
   onFilterWebinars: (filteredWebinars: any[]) => void;
@@ -60,6 +61,39 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
     onFilterWebinars(filteredWebinars);
   };
 
+  const filterByDate = (selectedOptions: string) => {
+    const today = new Date();
+    const filteredWebinars =
+        selectedOptions.length > 0 && !selectedOptions.includes('all')
+        ? webinarData.filter((webinar) => new Date(webinar.date) < today)
+        : webinarData;
+    onFilterWebinars(filteredWebinars);
+  };
+
+  const filterByTag = (selectedOption: string) => {
+    const filteredWebinars = webinarData.filter((webinar) =>{
+      let webinarTag = webinar.tag.replace(" ", "_").replace(".", "_").toLowerCase()
+      return selectedOption.includes(webinarTag)
+    } );
+    onFilterWebinars(filteredWebinars);
+  };
+  
+  const dateOptions = [
+    { id: 'previously', label: 'Précédemment' },
+    { id: 'all', label: 'Tous' },
+  ];
+
+  const tagOptions = [
+    { id: 'data_analysis', label: 'Data Analysis' },
+    { id: 'user_experience', label: 'User Experience' },
+    { id: 'digital_marketing', label: 'Digital Marketing' },
+    { id: 'java_programming', label: 'Java Programming' },
+    { id: 'cybersecurity', label: 'Cybersecurity' },
+    { id: 'data_science', label: 'Data Science' },
+    { id: 'node_js', label: 'Node.js' },
+    { id: 'bootcamp', label: 'Bootcamp' },
+  ];
+
   // Render the navigation component with buttons for filtering webinars
   return (
     <nav className="navigation">
@@ -89,7 +123,16 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
             <span className="filter">Filtres</span>
           </li>
           <li>
-            <a href="/">Thématique | Toutes</a>
+            <DropdownCheckbox
+              title="Dates"
+              options={dateOptions}
+              onFilter={filterByDate}
+            />
+            <DropdownCheckbox
+              title="Tags"
+              options={tagOptions}
+              onFilter={filterByTag}
+            />
           </li>
         </ul>
       </div>
