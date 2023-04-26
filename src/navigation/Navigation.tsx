@@ -66,15 +66,6 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
     onFilterWebinars(filteredWebinars);
   };
 
-  const filterByDate = (selectedOptions: string) => {
-    const today = new Date();
-    const filteredWebinars =
-        selectedOptions.length > 0 && !selectedOptions.includes('all')
-        ? webinarData.filter((webinar) => new Date(webinar.date) < today)
-        : webinarData;
-    onFilterWebinars(filteredWebinars);
-  };
-
   const filterByTag = (selectedOption: string) => {
     const filteredWebinars = webinarData.filter((webinar) =>{
       let webinarTag = webinar.tag.replace(" ", "_").replace(".", "_").toLowerCase()
@@ -83,11 +74,6 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
     onFilterWebinars(filteredWebinars);
   };
   
-  // const dateOptions = [
-  //   { id: 'previously', label: 'Précédemment' },
-  //   { id: 'all', label: 'Tous' },
-  // ];
-
   const tagOptions = [
     { id: 'data_analysis', label: 'Data Analysis' },
     { id: 'user_experience', label: 'User Experience' },
@@ -96,7 +82,6 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
     { id: 'cybersecurity', label: 'Cybersecurity' },
     { id: 'data_science', label: 'Data Science' },
     { id: 'node_js', label: 'Node.js' },
-    { id: 'bootcamp', label: 'Bootcamp' },
   ];
 
   // Render the navigation component with buttons for filtering webinars
@@ -143,16 +128,11 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
       <div className="navigation__right">
         <ul>
           <li>
-            <span className="filter">Filtres</span>
+            <span className="navigation__filter">Filtres</span>
           </li>
-          <li>
-            {/* <DropdownCheckbox
-              title="Dates"
-              options={dateOptions}
-              onFilter={filterByDate}
-            /> */}
+          <li className="navigation__dropdowncheckbox">
             <DropdownCheckbox
-              title="Tags"
+              title="Thématique"
               options={tagOptions}
               onFilter={filterByTag}
             />

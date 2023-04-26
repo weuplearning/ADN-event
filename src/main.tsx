@@ -7,3 +7,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <App />
   </React.StrictMode>,
 )
+
+
+//TODO
+// masquer filtre tag lorsque bootamp onglet actif
+//filtres croisés avec tag (prochainement /précédent)
+// date format
+// superposition selector/thumbanil FIX
+// factoriser handleButtons dans navigation.tsx

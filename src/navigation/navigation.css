@@ -6,6 +6,10 @@
   border-bottom: 1px solid #e5e5e5;
 }
 
+.navigation__right{
+  margin-right: 30px;
+}
+
 .navigation__left ul,
 .navigation__right ul {
   list-style: none;
@@ -35,6 +39,8 @@
   transition: all 0.2s ease-in-out;
   padding-bottom: 5px;
   border-bottom: 2px solid transparent;
+  padding-top: 5px;
+  padding-left: 5px;
 }
 
 .navigation__left button:hover,
@@ -52,6 +58,13 @@
   font-size: 14px;
 }
 
-.filter {
-  margin-right: 10px;
+.navigation__filter {
+  margin-right: 20px;
+}
+
+.navigation__dropdowncheckbox{
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

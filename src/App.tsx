@@ -4,6 +4,7 @@ import ThumbnailGallery from "./thumbnailGallery/ThumbnailGallery";
 import webinarData from "../data/webinarData.json";
 import Banner from "./banner/Banner";
 import { Webinar } from "./type";
+import "./App.css";
 
 function App() {
   // State to keep track of the list of webinars
