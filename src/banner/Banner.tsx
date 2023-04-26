@@ -7,7 +7,6 @@ type Props = {
   webinarData: Webinar[];
 };
 
-
 // Banner component that displays information about the next webinar
 const Banner: React.FC<Props> = ({ webinarData }) => {
   // State for the list of webinars and the next webinar
@@ -41,15 +40,15 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
   return (
     <div className="container">
       <div className="left-block">
-        <p>Ne loupez pas le prochain webinaire</p>
-        <h2>{title}</h2>
-        <span className="webinaire_tag">{tag}</span>
-        <p>{description}</p>
-        <p>{moment(date).format("dddd Do MMMM YYYY, h:mm a")}</p>
+        <p className="left-block-text">Ne loupez pas le prochain webinaire</p>
+        <h2 className="left-block-title">{title}</h2>
+        <p className="webinaire-tag">{tag}</p>
+        <p className="left-block-text">{description}</p>
+        <p className="webinaire-date">{moment(date).format("dddd Do MMMM YYYY, h:mm a")}</p>
+        <button className="webinaire-button">Je m'inscris au webinaire</button>
       </div>
       <div className="right-block">
-        <img src={image} alt={title} />
-        <button>Je m'inscris au webinaire</button>
+        <img className="webinaire-image" src={image} alt={title} />
       </div>
     </div>
   );

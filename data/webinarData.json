@@ -8,7 +8,7 @@
         "position": "Data Scientist at ACME Corp"
       },
       "tag": "data analysis",
-      "image": "https://example.com/images/intro-data-analysis-python.jpg"
+      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
     },
     {
       "title": "Improving User Experience on Your Website",
@@ -19,7 +19,7 @@
         "position": "UX Designer at XYZ Agency"
       },
       "tag": "user experience",
-      "image": "https://example.com/images/improve-user-experience-website.jpg"
+      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
     },
     {
       "title": "The Basics of Digital Marketing",
@@ -30,7 +30,7 @@
         "position": "Digital Marketing Specialist at ABC Company"
       },
       "tag": "digital marketing",
-      "image": "https://example.com/images/basics-digital-marketing.jpg"
+      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
     },
     {
       "title": "Introduction to Java Programming",
@@ -41,7 +41,7 @@
         "position": "Java Developer at DEF Inc."
       },
       "tag": "Java programming",
-      "image": "https://example.com/images/intro-java-programming.jpg"
+      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
     },
     {
       "title": "Cybersecurity Trends in 2022",
@@ -52,7 +52,7 @@
         "position": "Security Expert at GHI Company"
       },
       "tag": "cybersecurity",
-      "image": "https://example.com/images/cybersecurity-trends-2022.jpg"
+      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
     },
     {
       "title": "Introduction to Data Science",
@@ -63,7 +63,7 @@
         "position": "Data Scientist at JKL Corp"
       },
       "tag": "data science",
-      "image": "https://example.com/images/intro-data-science.jpg"
+      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
     },
     {
       "title": "Building Scalable Web Applications with Node.js",
@@ -73,7 +73,8 @@
         "name": "David Lee",
         "position": "Full Stack Developer at MNO Inc."
       },
-      "tag": "Node.js"
+      "tag": "Node.js",
+      "image":"https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
     },
     {
       "title":"React Native Bootcamp",
@@ -84,7 +85,7 @@
           "position":"Front-End Developer at PQR Corp"
       },
       "tag":"bootcamp",
-      "image":"https://example.com/images/react-native-bootcamp.jpg"
+      "image":"https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
   },
   {
       "title":"Cloud Computing Bootcamp",
@@ -95,7 +96,7 @@
           "position":"Cloud Solutions Architect at LMN Inc"
       },
       "tag":"bootcamp",
-      "image":"https://example.com/images/cloud-computing-bootcamp.jpg"
+      "image":"https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
   },
   {
       "title":"Full Stack Web Development Bootcamp",
@@ -106,6 +107,6 @@
           "position":"Full-Stack Developer at ABC Company"
       },
       "tag":"bootcamp",
-      "image":"https://example.com/images/full-stack-web-development-bootcamp.jpg"
+      "image":"https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
   }
 ]

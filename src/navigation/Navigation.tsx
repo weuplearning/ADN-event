@@ -14,9 +14,11 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
   const [isProchainementClicked, setIsProchainementClicked] = useState(false);
   const [isBootcampClicked, setIsBootcampClicked] = useState(false);
   const [isReplayClicked, setIsReplayClicked] = useState(false);
+  const [activeButton, setActiveButton] = useState("Tous");
 
   // Function to handle "Prochainement" button click
-  const handleProchainementClick = () => {
+  const handleProchainementClick = (buttonName: string) => {
+    setActiveButton(buttonName);
     setIsProchainementClicked(true);
     setIsBootcampClicked(false);
     setIsReplayClicked(false);
@@ -28,7 +30,8 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
   };
 
   // Function to handle "Tous" button click
-  const handleAllClick = () => {
+  const handleAllClick = (buttonName: string) => {
+    setActiveButton(buttonName);
     setIsProchainementClicked(false);
     setIsBootcampClicked(false);
     setIsReplayClicked(false);
@@ -36,7 +39,8 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
   };
 
   // Function to handle "Bootcamp" button click
-  const handleBootcampClick = () => {
+  const handleBootcampClick = (buttonName: string) => {
+    setActiveButton(buttonName);
     setIsBootcampClicked(true);
     setIsProchainementClicked(false);
     setIsReplayClicked(false);
@@ -49,7 +53,8 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
   };
 
   // Function to handle "Bootcamp" button click
-  const handleReplayClick = () => {
+  const handleReplayClick = (buttonName: string) => {
+    setActiveButton(buttonName);
     setIsReplayClicked(true);
     setIsBootcampClicked(false);
     setIsProchainementClicked(false);
@@ -78,10 +83,10 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
     onFilterWebinars(filteredWebinars);
   };
   
-  const dateOptions = [
-    { id: 'previously', label: 'Précédemment' },
-    { id: 'all', label: 'Tous' },
-  ];
+  // const dateOptions = [
+  //   { id: 'previously', label: 'Précédemment' },
+  //   { id: 'all', label: 'Tous' },
+  // ];
 
   const tagOptions = [
     { id: 'data_analysis', label: 'Data Analysis' },
@@ -100,18 +105,36 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
       <div className="navigation__left">
         <ul>
           <li>
-            <button type="button" onClick={handleProchainementClick}>
+            <button 
+            type="button"
+            className={activeButton === "Prochainement" ? "active" : ""}
+            onClick={() => handleProchainementClick("Prochainement")}
+            >
               Prochainement
             </button>
           </li>
           <li>
-            <button onClick={handleReplayClick} type="button">Tous les replays</button>
+            <button 
+            type="button"
+            className={activeButton === "Tous les replays" ? "active" : ""}
+            onClick={() => handleReplayClick("Tous les replays")}
+            >Tous les replays</button>
           </li>
           <li>
-            <button onClick={handleBootcampClick} type="button">Bootcamp précédent</button>
+          <button
+              type="button"
+              className={activeButton === "Bootcamp précédent" ? "active" : ""}
+              onClick={() => handleBootcampClick("Bootcamp précédent")}
+            >
+              Bootcamp précédent
+            </button>
           </li>
           <li>
-            <button onClick={handleAllClick} type="button">
+            <button
+              type="button"
+              className={activeButton === "Tous" ? "active" : ""}
+              onClick={() => handleAllClick("Tous")}
+            >
               Tous
             </button>
           </li>
@@ -123,11 +146,11 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
             <span className="filter">Filtres</span>
           </li>
           <li>
-            <DropdownCheckbox
+            {/* <DropdownCheckbox
               title="Dates"
               options={dateOptions}
               onFilter={filterByDate}
-            />
+            /> */}
             <DropdownCheckbox
               title="Tags"
               options={tagOptions}
