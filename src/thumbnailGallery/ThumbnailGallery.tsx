@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Webinar } from "../type";
 import moment from "moment";
 import "./thumbnail-gallery.css";
 
 type Props = {
   webinars: Webinar[];
-  isProchainementClicked: boolean;
 };
 
 // Thumbnail gallery component that displays webinars

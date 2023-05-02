@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import Navigation from "./navigation/Navigation";
 import ThumbnailGallery from "./thumbnailGallery/ThumbnailGallery";
 import webinarData from "../data/webinarData.json";
@@ -33,7 +33,7 @@ function App() {
         tagFilteredWebinars={tagFilteredWebinars} 
       />
       {/* Thumbnail gallery component that displays webinars */}
-      <ThumbnailGallery webinars={webinars} webinarData={webinarData} />
+      <ThumbnailGallery webinars={webinars} />
     </div>
   );
 }

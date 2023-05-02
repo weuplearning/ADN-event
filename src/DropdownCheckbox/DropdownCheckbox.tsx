@@ -12,12 +12,11 @@ type DropdownOption = {
     onFilter: (selectedOptions: string[]) => void;
     isOpen: boolean;
     setIsOpen: (isOpen: boolean) => void;
-    selectedOption: (setSelectedOptions: string[]) => void;
+    selectedOption: (newSelectedOptions: string[]) => void;
     setSelectedOptions : string[];
   };
 
   const DropdownCheckbox: React.FC<Props> = ({ title, options, onFilter, isOpen, setIsOpen, selectedOptions, setSelectedOptions }) => {
-    // const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   
     const toggleDropdown = () => {
       setIsOpen(!isOpen);

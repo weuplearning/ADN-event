@@ -10,6 +10,24 @@ type Props = {
   tagFilteredWebinars: Webinar[];
 };
 
+type ButtonProps = {
+  buttonType: string;
+  activeButton: string;
+  onClick: () => void;
+};
+
+const FilterButton: React.FC<ButtonProps> = ({ buttonType, activeButton, onClick }) => {
+  return (
+    <button
+      type="button"
+      className={activeButton === buttonType ? "active" : ""}
+      onClick={onClick}
+    >
+      {buttonType}
+    </button>
+  );
+};
+
 // Navigation component that allows filtering of webinars
 const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, webinarData, tagFilteredWebinars }) => {
   // State to keep track of whether the "Prochainement" and "bootcamp" button is clicked
@@ -20,63 +38,32 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
   const [isReplayClicked, setIsReplayClicked] = useState(false);
   const [activeButton, setActiveButton] = useState("Tous");
 
-  // Function to handle "Prochainement" button click
-  const handleProchainementClick = (buttonName: string) => {
-    setActiveButton(buttonName);
-    setIsProchainementClicked(true);
-    setIsBootcampClicked(false);
-    setIsReplayClicked(false);
+  // Function to handle button click
+  const handleButtonClick = (buttonType: string) => {
+    setActiveButton(buttonType);
+    setIsProchainementClicked(buttonType === "Prochainement");
+    setIsBootcampClicked(buttonType === "Bootcamp précédent");
+    setIsReplayClicked(buttonType === "Tous les replays");
+  
+    let filteredWebinars: Webinar[] = [];
+  
+    if (buttonType === "Prochainement") {
+      const now = new Date();
+      filteredWebinars = webinarData.filter((webinar) => new Date(webinar.date) > now);
+    } else if (buttonType === "Tous les replays") {
+      const today = new Date();
+      filteredWebinars = webinarData.filter((webinar) => new Date(webinar.date) < today && webinar.tag !== "bootcamp");
+    } else if (buttonType === "Bootcamp précédent") {
+      const today = new Date();
+      filteredWebinars = webinarData.filter((webinar) => new Date(webinar.date) < today && webinar.tag === "bootcamp");
+    } else {
+      filteredWebinars = webinarData;
+    }
+  
     setIsOpen(false);
-    setSelectedOptions([])
-    const now = new Date();
-    const filteredWebinars = webinarData.filter(
-      (webinar) => new Date(webinar.date) > now
-    );
+    setSelectedOptions([]);
     onFilterWebinars(filteredWebinars);
-    onTagFilterWebinars(filteredWebinars)
-  };
-
-  // Function to handle "Tous" button click
-  const handleAllClick = (buttonName: string) => {
-    setActiveButton(buttonName);
-    setIsProchainementClicked(false);
-    setIsBootcampClicked(false);
-    setIsReplayClicked(false);
-    onFilterWebinars(webinarData);
-    setIsOpen(false);
-    setSelectedOptions([])
-
-  };
-
-  // Function to handle "Bootcamp" button click
-  const handleBootcampClick = (buttonName: string) => {
-    setActiveButton(buttonName);
-    setIsBootcampClicked(true);
-    setIsProchainementClicked(false);
-    setIsReplayClicked(false);
-    const today = new Date();
-    const filteredWebinars = webinarData.filter((webinar) => {
-      const webinarDate = new Date(webinar.date);
-      return webinar.tag === "bootcamp" && webinarDate < today;
-    });
-    onFilterWebinars(filteredWebinars);
-  };
-
-  // Function to handle "Bootcamp" button click
-  const handleReplayClick = (buttonName: string) => {
-    setActiveButton(buttonName);
-    setIsReplayClicked(true);
-    setIsBootcampClicked(false);
-    setIsProchainementClicked(false);
-    setIsOpen(false);
-    setSelectedOptions([])
-    const today = new Date();
-    const filteredWebinars = webinarData.filter((webinar) => {
-      const webinarDate = new Date(webinar.date);
-      return webinar.tag !== "bootcamp" && webinarDate < today;
-    });
-    onFilterWebinars(filteredWebinars);
-    onTagFilterWebinars(filteredWebinars)
+    onTagFilterWebinars(filteredWebinars);
   };
 
   const filterByTag = (selectedOption: string) => {
@@ -107,38 +94,32 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
       <div className="navigation__left">
         <ul>
           <li>
-            <button 
-            type="button"
-            className={activeButton === "Prochainement" ? "active" : ""}
-            onClick={() => handleProchainementClick("Prochainement")}
-            >
-              Prochainement
-            </button>
+          <FilterButton
+            buttonType="Prochainement"
+            activeButton={activeButton}
+            onClick={() => handleButtonClick("Prochainement")}
+          />
           </li>
           <li>
-            <button 
-            type="button"
-            className={activeButton === "Tous les replays" ? "active" : ""}
-            onClick={() => handleReplayClick("Tous les replays")}
-            >Tous les replays</button>
+          <FilterButton
+            buttonType="Tous les replays"
+            activeButton={activeButton}
+            onClick={() => handleButtonClick("Tous les replays")}
+          />  
           </li>
           <li>
-          <button
-              type="button"
-              className={activeButton === "Bootcamp précédent" ? "active" : ""}
-              onClick={() => handleBootcampClick("Bootcamp précédent")}
-            >
-              Bootcamp précédent
-            </button>
+          <FilterButton
+            buttonType="Bootcamp précédent"
+            activeButton={activeButton}
+            onClick={() => handleButtonClick("Bootcamp précédent")}
+          />  
           </li>
           <li>
-            <button
-              type="button"
-              className={activeButton === "Tous" ? "active" : ""}
-              onClick={() => handleAllClick("Tous")}
-            >
-              Tous
-            </button>
+          <FilterButton
+            buttonType="Tous"
+            activeButton={activeButton}
+            onClick={() => handleButtonClick("Tous")}
+          />  
           </li>
         </ul>
       </div>
