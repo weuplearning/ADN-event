@@ -125,7 +125,9 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
           </li>
         </ul>
       </div>
-      <div className="navigation__right">
+      {
+        activeButton !== "Bootcamp précédent" &&
+        <div className="navigation__right">
         <ul>
           <li>
             <span className="navigation__filter">Filtres</span>
@@ -135,10 +137,13 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
               title="Thématique"
               options={tagOptions}
               onFilter={filterByTag}
+              activeButton="eeee"
             />
           </li>
         </ul>
       </div>
+      }
+
     </nav>
   );
 };
