@@ -9,10 +9,15 @@ import "./App.css";
 function App() {
   // State to keep track of the list of webinars
   const [webinars, setWebinars] = useState<Webinar[]>(webinarData);
+  const [tagFilteredWebinars, setTagFilteredWebinars] = useState<Webinar[]>(webinarData);
 
   // Callback function to handle changes to the list of webinars
   const handleFilterWebinars = (filteredWebinars: Webinar[]) => {
     setWebinars(filteredWebinars);
+  };
+
+  const handleTagFilterWebinars = (filteredWebinars: Webinar[]) => {
+    setTagFilteredWebinars(filteredWebinars);
   };
 
   return (
@@ -21,8 +26,12 @@ function App() {
       <Banner webinarData={webinarData} />
 
       {/* Navigation component that allows filtering of webinars */}
-      <Navigation onFilterWebinars={handleFilterWebinars} webinarData={webinarData} />
-
+      <Navigation 
+        onFilterWebinars={handleFilterWebinars}
+        onTagFilterWebinars={handleTagFilterWebinars} 
+        webinarData={webinarData} 
+        tagFilteredWebinars={tagFilteredWebinars} 
+      />
       {/* Thumbnail gallery component that displays webinars */}
       <ThumbnailGallery webinars={webinars} webinarData={webinarData} />
     </div>

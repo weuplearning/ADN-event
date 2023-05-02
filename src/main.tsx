@@ -11,7 +11,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 
 //TODO
 // masquer filtre tag lorsque bootamp onglet actif OK
-// filtres croisés avec tag (prochainement /précédent)
-// date format
+// filtres croisés avec tag (prochainement /précédent) OK
 // fermer selector au click sur la page
 // factoriser handleButtons dans navigation.tsx
+// bouton tous pour les tags, qui décliquent es autres checkbox e qui se déclique si une autre checkbox est cliquée
+// fetch pour récupérer json

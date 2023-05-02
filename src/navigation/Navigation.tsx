@@ -5,11 +5,13 @@ import DropdownCheckbox from '../DropdownCheckbox/DropdownCheckbox';
 
 type Props = {
   onFilterWebinars: (filteredWebinars: any[]) => void;
+  onTagFilterWebinars: (filteredWebinars: any[]) => void;
   webinarData: Webinar[];
+  tagFilteredWebinars: Webinar[];
 };
 
 // Navigation component that allows filtering of webinars
-const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
+const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, webinarData, tagFilteredWebinars }) => {
   // State to keep track of whether the "Prochainement" and "bootcamp" button is clicked
   const [isProchainementClicked, setIsProchainementClicked] = useState(false);
   const [isBootcampClicked, setIsBootcampClicked] = useState(false);
@@ -27,6 +29,7 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
       (webinar) => new Date(webinar.date) > now
     );
     onFilterWebinars(filteredWebinars);
+    onTagFilterWebinars(filteredWebinars)
   };
 
   // Function to handle "Tous" button click
@@ -64,9 +67,14 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
       return webinar.tag !== "bootcamp" && webinarDate < today;
     });
     onFilterWebinars(filteredWebinars);
+    onTagFilterWebinars(filteredWebinars)
   };
 
   const filterByTag = (selectedOption: string) => {
+
+    if (isReplayClicked || isProchainementClicked) {
+      webinarData = tagFilteredWebinars
+    }
     const filteredWebinars = webinarData.filter((webinar) =>{
       let webinarTag = webinar.tag.replace(" ", "_").replace(".", "_").toLowerCase()
       return selectedOption.includes(webinarTag)
@@ -126,8 +134,8 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, webinarData }) => {
         </ul>
       </div>
       {
-        activeButton !== "Bootcamp précédent" &&
-        <div className="navigation__right">
+        !isBootcampClicked &&
+      <div className="navigation__right">
         <ul>
           <li>
             <span className="navigation__filter">Filtres</span>
