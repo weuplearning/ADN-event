@@ -13,6 +13,8 @@ type Props = {
 // Navigation component that allows filtering of webinars
 const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, webinarData, tagFilteredWebinars }) => {
   // State to keep track of whether the "Prochainement" and "bootcamp" button is clicked
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [isProchainementClicked, setIsProchainementClicked] = useState(false);
   const [isBootcampClicked, setIsBootcampClicked] = useState(false);
   const [isReplayClicked, setIsReplayClicked] = useState(false);
@@ -24,6 +26,8 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
     setIsProchainementClicked(true);
     setIsBootcampClicked(false);
     setIsReplayClicked(false);
+    setIsOpen(false);
+    setSelectedOptions([])
     const now = new Date();
     const filteredWebinars = webinarData.filter(
       (webinar) => new Date(webinar.date) > now
@@ -39,6 +43,9 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
     setIsBootcampClicked(false);
     setIsReplayClicked(false);
     onFilterWebinars(webinarData);
+    setIsOpen(false);
+    setSelectedOptions([])
+
   };
 
   // Function to handle "Bootcamp" button click
@@ -61,6 +68,8 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
     setIsReplayClicked(true);
     setIsBootcampClicked(false);
     setIsProchainementClicked(false);
+    setIsOpen(false);
+    setSelectedOptions([])
     const today = new Date();
     const filteredWebinars = webinarData.filter((webinar) => {
       const webinarDate = new Date(webinar.date);
@@ -146,6 +155,10 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
               options={tagOptions}
               onFilter={filterByTag}
               activeButton="eeee"
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              selectedOptions={selectedOptions}
+              setSelectedOptions={setSelectedOptions}
             />
           </li>
         </ul>
