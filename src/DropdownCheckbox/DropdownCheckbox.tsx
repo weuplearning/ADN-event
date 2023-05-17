@@ -12,9 +12,10 @@ type DropdownOption = {
     onFilter: (selectedOptions: string[]) => void;
     isOpen: boolean;
     setIsOpen: (isOpen: boolean) => void;
-    selectedOption: (newSelectedOptions: string[]) => void;
-    setSelectedOptions : string[];
+    selectedOptions: string[]; 
+    setSelectedOptions: (newSelectedOptions: string[]) => void; 
   };
+  
 
   const DropdownCheckbox: React.FC<Props> = ({ title, options, onFilter, isOpen, setIsOpen, selectedOptions, setSelectedOptions }) => {
   
@@ -27,7 +28,7 @@ type DropdownOption = {
     if (isChecked) {
       newSelectedOptions = [...selectedOptions, optionId];
     } else {
-      newSelectedOptions = selectedOptions.filter(id => id !== optionId);
+      newSelectedOptions = selectedOptions.filter((id:string) => id !== optionId);
     }
     setSelectedOptions(newSelectedOptions);
     onFilter(newSelectedOptions);
@@ -40,19 +41,21 @@ type DropdownOption = {
       </button>
       {isOpen && (
         <ul className="dropdown-checkbox__menu">
-          {options.map((option) => (
-            <li key={option.id}>
-              <label>
-                <input
-                  type="checkbox"
-                  name={title}
-                  checked={selectedOptions.includes(option.id)}
-                  onChange={(event) => handleOptionChange(option.id, event.target.checked)}
-                />
-                {option.label}
-              </label>
-            </li>
-          ))}
+          {options.map((option) => {
+            return (
+              <li key={option.id}>
+                <label>
+                  <input
+                    type="checkbox"
+                    name={title}
+                    checked={selectedOptions.includes(option.id)}
+                    onChange={(event) => handleOptionChange(option.id, event.target.checked)}
+                  />
+                  {option.label}
+                </label>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

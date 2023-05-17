@@ -38,7 +38,7 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
 
   // Render the banner with the next webinar's details
   return (
-    <div className="container">
+    <div className="banner-container">
       <div className="left-block">
         <p className="left-block-text">Ne loupez pas le prochain webinaire</p>
         <h2 className="left-block-title">{title}</h2>

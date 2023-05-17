@@ -1,33 +1,34 @@
 .dropdown-checkbox {
-    position: relative;
-    display: inline-block;
-    
-  }
-  
-  .dropdown-checkbox__toggle {
-    cursor: pointer;
-  }
-  
-  .dropdown-checkbox__menu {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: white;
-    border: 1px solid #000;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    min-width: 200px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  .dropdown-checkbox__menu li {
-    padding: 8px 12px;
-  }
-  
-  .dropdown-checkbox__menu li label {
-    cursor: pointer;
-    user-select: none;
-  }
-  
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-checkbox__toggle {
+  cursor: pointer;
+}
+
+.dropdown-checkbox__menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #000;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex; 
+  flex-direction: column; 
+  align-items: inherit !important;
+}
+
+.dropdown-checkbox__menu li {
+  padding: 8px 12px;
+}
+
+.dropdown-checkbox__menu li label {
+  cursor: pointer;
+  user-select: none;
+}

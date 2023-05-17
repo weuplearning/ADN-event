@@ -15,4 +15,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 // fermer selector et remettre a 0 au click sur autre onglet OK
 // clean code OK
 // fetch pour récupérer json
-// ?? bouton tous pour les tags, qui décliquent es autres checkbox e qui se déclique si une autre checkbox est cliquée
+// script automatisation react
+// responsive
+

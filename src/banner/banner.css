@@ -1,8 +1,8 @@
-.container {
+.banner-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 5%;
   background-color: #1E2631;
 }
 

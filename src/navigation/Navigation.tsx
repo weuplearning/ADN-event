@@ -66,7 +66,7 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
     onTagFilterWebinars(filteredWebinars);
   };
 
-  const filterByTag = (selectedOption: string) => {
+  const filterByTag = (selectedOption: string[]) => {
 
     if (isReplayClicked || isProchainementClicked) {
       webinarData = tagFilteredWebinars
@@ -135,7 +135,7 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
               title="Thématique"
               options={tagOptions}
               onFilter={filterByTag}
-              activeButton="eeee"
+              // activeButton="eeee"
               isOpen={isOpen}
               setIsOpen={setIsOpen}
               selectedOptions={selectedOptions}

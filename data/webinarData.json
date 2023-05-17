@@ -1,112 +1,13 @@
 [
-    {
-      "title": "Introduction to Data Analysis with Python",
-      "date": "2022-01-15T14:00:00Z",
-      "description": "This webinar will teach you the basics of data analysis with Python, including data collection, data cleaning, and data visualization.",
-      "speaker": {
-        "name": "John Smith",
-        "position": "Data Scientist at ACME Corp"
-      },
-      "tag": "data analysis",
-      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
-    },
-    {
-      "title": "Improving User Experience on Your Website",
-      "date": "2022-02-05T10:00:00Z",
-      "description": "This webinar will cover strategies and tools to improve user experience on your website, including optimizing loading speed and user-centered design.",
-      "speaker": {
-        "name": "Alice Martin",
-        "position": "UX Designer at XYZ Agency"
-      },
-      "tag": "user experience",
-      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
-    },
-    {
-      "title": "The Basics of Digital Marketing",
-      "date": "2022-03-20T16:00:00Z",
-      "description": "This webinar covers the key elements of digital marketing, including email marketing strategies, social media, and search engine optimization.",
-      "speaker": {
-        "name": "Sophie Dubois",
-        "position": "Digital Marketing Specialist at ABC Company"
-      },
-      "tag": "digital marketing",
-      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
-    },
-    {
-      "title": "Introduction to Java Programming",
-      "date": "2022-04-10T11:00:00Z",
-      "description": "This webinar will teach you the basics of Java programming, including basic syntax and data manipulation.",
-      "speaker": {
-        "name": "Peter Smith",
-        "position": "Java Developer at DEF Inc."
-      },
-      "tag": "Java programming",
-      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
-    },
-    {
-      "title": "Cybersecurity Trends in 2022",
-      "date": "2022-05-15T13:00:00Z",
-      "description": "This webinar will cover emerging cybersecurity trends in 2022, including emerging threats and security solutions.",
-      "speaker": {
-        "name": "Jack Martin",
-        "position": "Security Expert at GHI Company"
-      },
-      "tag": "cybersecurity",
-      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
-    },
-    {
-      "title": "Introduction to Data Science",
-      "date": "2023-06-20T09:00:00Z",
-      "description": "This webinar will introduce you to the field of data science, including the basics of statistical analysis and machine learning.",
-      "speaker": {
-        "name": "Karen Brown",
-        "position": "Data Scientist at JKL Corp"
-      },
-      "tag": "data science",
-      "image": "https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
-    },
-    {
-      "title": "Building Scalable Web Applications with Node.js",
-      "date": "2022-07-10T14:00:00Z",
-      "description": "This webinar will teach you how to build scalable web applications using Node.js, including server-side JavaScript and database integration.",
-      "speaker": {
-        "name": "David Lee",
-        "position": "Full Stack Developer at MNO Inc."
-      },
-      "tag": "Node.js",
-      "image":"https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
-    },
-    {
-      "title":"React Native Bootcamp",
-      "date":"2023-05-01T09:00:00Z",
-      "description":"This bootcamp will teach you how to build mobile apps using React Native, including layout design and state managementzzzzz.This bootcamp will teach you how to build mobile apps using React Native, including layout design and state management.",
-      "speaker":{
-          "name":"Sarah Johnson",
-          "position":"Front-End Developer at PQR Corp"
-      },
-      "tag":"bootcamp",
-      "image":"https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
-  },
   {
-      "title":"Cloud Computing Bootcamp",
-      "date":"2022-08-15T10:00:00Z",
-      "description":"This bootcamp will introduce you to the fundamentals of cloud computing, including virtualization and containerization.",
-      "speaker":{
-          "name":"Mark Brown",
-          "position":"Cloud Solutions Architect at LMN Inc"
-      },
-      "tag":"bootcamp",
-      "image":"https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
-  },
-  {
-      "title":"Full Stack Web Development Bootcamp",
-      "date":"2023-10-01T09:00:00Z",
-      "description":"This bootcamp will teach you how to build full-stack web applications using modern web technologies, including React, Node.js, and MongoDB.",
-      "speaker":{
-          "name":"John Doe",
-          "position":"Full-Stack Developer at ABC Company"
-      },
-      "tag":"bootcamp",
-      "image":"https://cdn-iempo.nitrocdn.com/LMUWXfDmdHYyrHypyxdBrzCprEvNakip/assets/images/optimized/rev-2f3cb74/wp-content/uploads/2020/06/quel-internet-webinaire-1024x576.png"
+    "title": "Introduction to Data Analysis with Python",
+    "date": "2022-01-15T14:00:00Z",
+    "description": "This webinar will teach you the basics of data analysis with Python, including data collection, data cleaning, and data visualization.",
+    "speaker": {
+      "name": "John Smith",
+      "position": "Data Scientist at ACME Corp"
+    },
+    "tag": "data analysis",
+    "image": "https://amazon.koa.qualif.dev/media/microsites/amazon/react_event/images/Acquisition-Strategie-Design---1min30.png"
   }
 ]
