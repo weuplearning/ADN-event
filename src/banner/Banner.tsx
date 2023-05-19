@@ -9,6 +9,7 @@ type Props = {
 
 // Banner component that displays information about the next webinar
 const Banner: React.FC<Props> = ({ webinarData }) => {
+  console.log(webinarData)
   // State for the list of webinars and the next webinar
   const [webinars, setWebinars] = useState<Webinar[]>([]);
   const [nextWebinar, setNextWebinar] = useState<Webinar | null>(null);
@@ -16,17 +17,21 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
   // Load webinar data on component mount
   useEffect(() => {
     setWebinars(webinarData);
-  }, []);
+  }, [webinarData]);
 
   // Find the next webinar and set it to state whenever the webinars state changes
   useEffect(() => {
-    const sortedWebinars = webinars.sort((a, b) =>
+    const sortedWebinars = webinarData.sort((a, b) =>
       moment(a.date).diff(moment(b.date))
     );
+    console.log({"sorted": sortedWebinars})
     const now = moment();
     const next = sortedWebinars.find((webinar) => moment(webinar.date).isAfter(now));
+    console.log({"next": next})
     const last = sortedWebinars[sortedWebinars.length - 1];
+    console.log({"last": last})
     setNextWebinar(next || last);
+    console.log({"nextwebinar": nextWebinar})
   }, [webinars]);
 
   // Return null if there's no next webinar to display
