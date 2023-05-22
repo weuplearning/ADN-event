@@ -9,7 +9,6 @@ type Props = {
 
 // Banner component that displays information about the next webinar
 const Banner: React.FC<Props> = ({ webinarData }) => {
-  console.log(webinarData)
   // State for the list of webinars and the next webinar
   const [webinars, setWebinars] = useState<Webinar[]>([]);
   const [nextWebinar, setNextWebinar] = useState<Webinar | null>(null);
@@ -24,14 +23,10 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
     const sortedWebinars = webinarData.sort((a, b) =>
       moment(a.date).diff(moment(b.date))
     );
-    console.log({"sorted": sortedWebinars})
     const now = moment();
     const next = sortedWebinars.find((webinar) => moment(webinar.date).isAfter(now));
-    console.log({"next": next})
     const last = sortedWebinars[sortedWebinars.length - 1];
-    console.log({"last": last})
     setNextWebinar(next || last);
-    console.log({"nextwebinar": nextWebinar})
   }, [webinars]);
 
   // Return null if there's no next webinar to display
@@ -39,7 +34,11 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
     return null;
   }
 
-  const { title, tag, description, date, image } = nextWebinar;
+  const { title, tag, description, date, image, url_enroll } = nextWebinar;
+
+  const handleEnrollClick = () => {
+    window.location.href = url_enroll;
+  };
 
   // Render the banner with the next webinar's details
   return (
@@ -50,7 +49,9 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
         <p className="webinaire-tag">{tag}</p>
         <p className="left-block-text">{description}</p>
         <p className="webinaire-date">{moment(date).format("dddd Do MMMM YYYY, h:mm a")}</p>
-        <button className="webinaire-button">Je m'inscris au webinaire</button>
+        <button className="webinaire-button" onClick={handleEnrollClick}>
+          Je m'inscris au webinaire
+        </button>
       </div>
       <div className="right-block">
         <img className="webinaire-image" src={image} alt={title} />

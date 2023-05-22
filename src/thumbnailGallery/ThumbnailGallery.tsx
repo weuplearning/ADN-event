@@ -10,6 +10,7 @@ type Props = {
 // Thumbnail gallery component that displays webinars
 const ThumbnailGallery: React.FC<Props> = ({ webinars }) => {
 
+
   // Render the thumbnail gallery with the filtered webinars
   return (
     <div className="thumbnail-gallery">
@@ -23,7 +24,9 @@ const ThumbnailGallery: React.FC<Props> = ({ webinars }) => {
             <p className="thumbnail__speaker">{webinar.speaker.name}</p>
             <p className="thumbnail__speaker_position">{webinar.speaker.position}</p>
             <p className="thumbnail__tag">{webinar.tag}</p>
-            <button className="thumbnail__button">Je m'inscris</button>
+            <button className="thumbnail__button" onClick={() => window.location.href = webinar.url_enroll}>
+              Je m'inscris
+            </button>
           </div>
         </div>
       ))}
