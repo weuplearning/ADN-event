@@ -64,8 +64,7 @@
 .thumbnail__title {
   font-size: 18px;
   padding-right: 20px;
-  max-height: 50px;
-  min-height: 50px;
+  height: 110px;
   margin-bottom: 4px;
 }
 
