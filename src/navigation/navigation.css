@@ -65,8 +65,22 @@
 }
 
 .navigation__dropdowncheckbox{
-  border: 1px solid #000;
+  /* border: 1px solid #000;
   border-radius: 5px;
   width: 200px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  border: .2rem solid #878e8e;
+  color: #000;
+  font-weight: bold;
+  padding: .5rem .7rem;
+  border-radius: .6rem;
+  cursor: pointer;
+  background: #C9CCCC;
+  transition: .15s;
+  display: flex;
+}
+
+.dropdown-checkbox__toggle{
+  color: #000;
+  font-weight: bold;
 }

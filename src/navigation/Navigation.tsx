@@ -6,6 +6,7 @@ import DropdownCheckbox from '../DropdownCheckbox/DropdownCheckbox';
 type Props = {
   onFilterWebinars: (filteredWebinars: any[]) => void;
   onTagFilterWebinars: (filteredWebinars: any[]) => void;
+  onFilter: (selectedOptions: string[]) => void;
   webinarData: Webinar[];
   tagFilteredWebinars: Webinar[];
 };
@@ -88,6 +89,17 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
     { id: 'corporate', label: 'Gestion des entreprises' },
   ];
 
+  const handleOptionChange = (optionId: string, isChecked: boolean) => {
+    let newSelectedOptions;
+    if (isChecked) {
+      newSelectedOptions = [...selectedOptions, optionId];
+    } else {
+      newSelectedOptions = selectedOptions.filter((id:string) => id !== optionId);
+    }
+    setSelectedOptions(newSelectedOptions);
+    filterByTag(newSelectedOptions);
+  };
+
   // Render the navigation component with buttons for filtering webinars
   return (
     <nav className="navigation">
@@ -127,12 +139,28 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
         !isBootcampClicked &&
       <div className="navigation__right">
         <ul>
-          <li>
-            <span className="navigation__filter">Filtres</span>
-          </li>
+          {isOpen && (
+          <ul className="dropdown-checkbox__menu">
+            {tagOptions.map((option) => {
+              return (
+                <li key={option.id}>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="heyyyy"
+                      checked={selectedOptions.includes(option.id)}
+                      onChange={(event) => handleOptionChange(option.id, event.target.checked)}
+                    />
+                    {option.label}
+                  </label>
+                </li>
+              );
+            })}
+          </ul>
+          )}
           <li className="navigation__dropdowncheckbox">
             <DropdownCheckbox
-              title="Thématique"
+              title="Filtres"
               options={tagOptions}
               onFilter={filterByTag}
               isOpen={isOpen}

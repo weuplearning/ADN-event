@@ -23,43 +23,18 @@ type DropdownOption = {
       setIsOpen(!isOpen);
     };
 
-  const handleOptionChange = (optionId: string, isChecked: boolean) => {
-    let newSelectedOptions;
-    if (isChecked) {
-      newSelectedOptions = [...selectedOptions, optionId];
-    } else {
-      newSelectedOptions = selectedOptions.filter((id:string) => id !== optionId);
-    }
-    setSelectedOptions(newSelectedOptions);
-    onFilter(newSelectedOptions);
-  };
 
   return (
+    <>
     <div className="dropdown-checkbox">
       <button onClick={toggleDropdown} className="dropdown-checkbox__toggle">
         {title}
       </button>
-      {isOpen && (
-        <ul className="dropdown-checkbox__menu">
-          {options.map((option) => {
-            return (
-              <li key={option.id}>
-                <label>
-                  <input
-                    type="checkbox"
-                    name={title}
-                    checked={selectedOptions.includes(option.id)}
-                    onChange={(event) => handleOptionChange(option.id, event.target.checked)}
-                  />
-                  {option.label}
-                </label>
-              </li>
-            );
-          })}
-        </ul>
-      )}
     </div>
+
+    </>
   );
-};
+  };
+  
 
 export default DropdownCheckbox;
