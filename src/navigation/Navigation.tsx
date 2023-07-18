@@ -79,13 +79,13 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
   };
   
   const tagOptions = [
-    { id: 'data_analysis', label: 'Data Analysis' },
-    { id: 'user_experience', label: 'User Experience' },
-    { id: 'digital_marketing', label: 'Digital Marketing' },
-    { id: 'java_programming', label: 'Java Programming' },
-    { id: 'cybersecurity', label: 'Cybersecurity' },
-    { id: 'data_science', label: 'Data Science' },
-    { id: 'node_js', label: 'Node.js' },
+    { id: 'strategy', label: 'Stratégie' },
+    { id: 'marketing', label: 'Marketing' },
+    { id: 'tech', label: 'Tech' },
+    { id: 'marketplace', label: 'Marketplace' },
+    { id: 'sales', label: 'Ventes' },
+    { id: 'operations', label: 'Gestion des opérations' },
+    { id: 'corporate', label: 'Gestion des entreprises' },
   ];
 
   // Render the navigation component with buttons for filtering webinars
@@ -135,7 +135,6 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
               title="Thématique"
               options={tagOptions}
               onFilter={filterByTag}
-              // activeButton="eeee"
               isOpen={isOpen}
               setIsOpen={setIsOpen}
               selectedOptions={selectedOptions}

@@ -20,10 +20,12 @@ function App() {
     setTagFilteredWebinars(filteredWebinars);
   };
 
+  const baseUrl = window.location.origin
+
   useEffect(() => {
     //for development and go through CORS limitation, use cors-anywhere - need to connect to the url and request an acces to the server
     // fetch("https://cors-anywhere.herokuapp.com/https://amazon.koa.qualif.dev/media/microsites/amazon/react_event/data.json")
-    fetch("https://amazon.koa.qualif.dev/media/microsites/amazon/react_event/data.json")
+    fetch(baseUrl+"/media/microsites/amazon/react_event/data.json")
       .then(response => response.json())
       .then(data => {
         setWebinars(data);
