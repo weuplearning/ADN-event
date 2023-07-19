@@ -1,6 +1,7 @@
 .dropdown-checkbox {
   position: relative;
   display: inline-block;
+  margin-left: 5px;
 }
 
 .dropdown-checkbox__toggle {
@@ -38,4 +39,9 @@ input[type="checkbox"] {
   pointer-events: none;
   position: absolute;
   opacity: 0;
+}
+
+.input_checked{
+  background-color: #44a1b9 !important;
+  color: #fff;
 }

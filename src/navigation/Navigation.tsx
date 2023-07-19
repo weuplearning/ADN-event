@@ -145,7 +145,7 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
               return (
                 <li 
                   key={option.id}
-                  className="dropdown-checkbox__menu_li"
+                  className={`dropdown-checkbox__menu_li ${selectedOptions.includes(option.id) ? 'input_checked' : ''}`}
                   >
                   <label>
                     <input
@@ -162,6 +162,10 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
           </ul>
           )}
           <li className="navigation__dropdowncheckbox">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil" viewBox="0 0 16 16">
+              <path d="M12.146 1.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10ZM11.207 2.5 3.5 10.207V10.5h.293L11.5 2.793V2.5ZM12 2.5v.293l-1 1L10.5 4 12 2.5ZM2 13.5a.5.5 0 0 0 .5-.5v-.628l.549-.317L2.5 13v.5Z"/>
+            </svg>
+
             <DropdownCheckbox
               title="Filtres"
               options={tagOptions}

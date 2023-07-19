@@ -20,7 +20,6 @@
 
 .navigation__left ul li,
 .navigation__right ul li {
-  display: inline-block;
   margin-right: 20px;
 }
 
@@ -66,16 +65,19 @@
 .navigation__dropdowncheckbox{
 
   color: #000;
+  border: .2rem solid #878e8e;
   font-weight: bold;
-  padding: .5rem .7rem;
+  padding: .2rem 0.8rem;
   border-radius: .6rem;
   cursor: pointer;
   background: #C9CCCC;
   transition: .15s;
   display: flex;
+  align-items: center;
 }
 
 .dropdown-checkbox__toggle{
   color: #000;
   font-weight: bold;
 }
+
