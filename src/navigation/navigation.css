@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 100px;
   border-bottom: 1px solid #e5e5e5;
+  margin-top: 1em;
 }
 
 .navigation__right{
@@ -13,8 +14,6 @@
 .navigation__left ul,
 .navigation__right ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   align-items: center;
 }
@@ -65,11 +64,7 @@
 }
 
 .navigation__dropdowncheckbox{
-  /* border: 1px solid #000;
-  border-radius: 5px;
-  width: 200px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
-  border: .2rem solid #878e8e;
+
   color: #000;
   font-weight: bold;
   padding: .5rem .7rem;

@@ -143,11 +143,14 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
           <ul className="dropdown-checkbox__menu">
             {tagOptions.map((option) => {
               return (
-                <li key={option.id}>
+                <li 
+                  key={option.id}
+                  className="dropdown-checkbox__menu_li"
+                  >
                   <label>
                     <input
                       type="checkbox"
-                      name="heyyyy"
+                      name={option.label}
                       checked={selectedOptions.includes(option.id)}
                       onChange={(event) => handleOptionChange(option.id, event.target.checked)}
                     />

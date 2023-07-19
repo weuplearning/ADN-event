@@ -5,26 +5,37 @@
 
 .dropdown-checkbox__toggle {
   cursor: pointer;
+  background-color: red;
+  color: red;
 }
 
 .dropdown-checkbox__menu {
-  background-color: white;
-  border: 1px solid #000;
+  background-color: #C9CCCC;
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  padding: .5rem 1rem;
+  border-radius: .6rem;
+  margin-right: 1rem;
+  flex-wrap: wrap;
   min-width: 200px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
   display: flex; 
   align-items: inherit !important;
 }
 
 .dropdown-checkbox__menu li {
   padding: 8px 12px;
+  background-color: #ececec;
+  border-radius: .3rem;
+  transition: .1s;
+  margin: 0.2rem;
 }
 
 .dropdown-checkbox__menu li label {
   cursor: pointer;
   user-select: none;
+}
+
+input[type="checkbox"] {
+  pointer-events: none;
+  position: absolute;
+  opacity: 0;
 }
