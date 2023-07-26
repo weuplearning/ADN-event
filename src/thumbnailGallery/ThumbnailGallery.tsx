@@ -10,10 +10,13 @@ type Props = {
 // Thumbnail gallery component that displays webinars
 
 const ThumbnailGallery: React.FC<Props> = ({ webinars }) => {
+  const today = new Date();
   return (
     <div className="thumbnail-gallery">
-      {webinars.map((webinar) => (
-        <div className="thumbnail" key={webinar.title}>
+      {webinars.map((webinar) => {
+        const passedWebinar = today > new Date(webinar.date)
+        return (
+          <div className="thumbnail" key={webinar.title}>
           <img className="thumbnail__image" src={webinar.image} alt={webinar.title} />
           <div className="thumbnail__content">
             <h3 className="thumbnail__title">{webinar.title}</h3>
@@ -31,12 +34,25 @@ const ThumbnailGallery: React.FC<Props> = ({ webinars }) => {
             <p className="thumbnail__speaker">{webinar.speaker.name}</p>
             <p className="thumbnail__speaker_position">{webinar.speaker.position}</p>
             <p className="thumbnail__tag">{webinar.tag}</p>
-            <button className="thumbnail__button" onClick={() => (window.location.href = webinar.url_enroll)}>
+            {
+              passedWebinar && webinar.url_video ?
+              <button className="thumbnail__button" onClick={() => (window.location.href = webinar.url_video)}>
+              Je regarde
+            </button>
+            : passedWebinar && !webinar.url_video ?
+              <button className="thumbnail__button" disabled>
+              Je regarde
+            </button>
+              : 
+              <button className="thumbnail__button" onClick={() => (window.location.href = webinar.url_enroll)}>
               Je m'inscris
             </button>
+            }
+
           </div>
         </div>
-      ))}
+        )
+      })}
     </div>
   );
 };

@@ -6,7 +6,7 @@ import DropdownCheckbox from '../DropdownCheckbox/DropdownCheckbox';
 type Props = {
   onFilterWebinars: (filteredWebinars: any[]) => void;
   onTagFilterWebinars: (filteredWebinars: any[]) => void;
-  onFilter: (selectedOptions: string[]) => void;
+  // onFilter: (selectedOptions: string[]) => void;
   webinarData: Webinar[];
   tagFilteredWebinars: Webinar[];
 };

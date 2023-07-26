@@ -57,6 +57,12 @@
   transition: background-color 0.3s;
 }
 
+.thumbnail__button:disabled {
+  background-color: #7a8a99; /* a lighter shade of the original color */
+  cursor: not-allowed; /* change cursor to the 'not allowed' style */
+  color: #bbb; /* make text color lighter */
+}
+
 .thumbnail__button:hover {
   background-color: #5c5c5c;
 }

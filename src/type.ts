@@ -11,4 +11,5 @@ export type Webinar = {
   tag: string;
   image: string;
   url_enroll: string;
+  url_video: string;
 };

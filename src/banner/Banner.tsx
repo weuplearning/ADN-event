@@ -44,7 +44,7 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
   return (
     <div className="banner-container">
       <div className="left-block">
-        <p className="left-block-text">Ne loupez pas le prochain webinaire</p>
+        <p className="left-block-text">Ne manquez pas le prochain webinaire</p>
         <h2 className="left-block-title">{title}</h2>
         <p className="webinaire-tag">{tag}</p>
         <p className="left-block-text">{description}</p>
