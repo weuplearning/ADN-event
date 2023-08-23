@@ -16,10 +16,10 @@ const ThumbnailGallery: React.FC<Props> = ({ webinars }) => {
     <div className="thumbnail-gallery">
       {webinars.map((webinar) => {
         const dateObj = new Date(webinar.date);
-        const options = { 
-          weekday: 'long', 
-          year: 'numeric', 
-          month: 'long', 
+        const options: Intl.DateTimeFormatOptions = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
           day: 'numeric',
           hour: '2-digit',
           minute: '2-digit',
