@@ -46,7 +46,7 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
       <div className="left-block">
         <p className="left-block-text">Ne manquez pas le prochain webinaire</p>
         <h2 className="left-block-title">{title}</h2>
-        <p className="webinaire-tag">{tag}</p>
+        <p className="webinaire-tag">#{tag}</p>
         <p className="left-block-text">{description}</p>
         <p className="webinaire-date">{moment(date).format("dddd Do MMMM YYYY, h:mm a")}</p>
         <button className="webinaire-button" onClick={handleEnrollClick}>

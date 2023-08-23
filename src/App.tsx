@@ -24,19 +24,24 @@ function App() {
 
   useEffect(() => {
     //for development and go through CORS limitation, use cors-anywhere - need to connect to the url and request an acces to the server
-    // fetch("https://cors-anywhere.herokuapp.com/https://amazon.koa.qualif.dev/media/microsites/amazon/react_event/data.json")
+    // fetch("https://cors-anywhere.herokuapp.com/https://accelerateur-du-numerique.fr/media/microsites/amazon/react_event/data.json")
     fetch(baseUrl+"/media/microsites/amazon/react_event/data.json")
       .then(response => response.json())
+
       .then(data => {
-        setWebinars(data);
-        setWebinarData(data);
-        setTagFilteredWebinars(data);
+        // Sort webinars by date, most recent first
+        const sortedWebinars = data.sort((a: Webinar, b: Webinar) => {
+          const dateA = new Date(a.date).getTime();
+          const dateB = new Date(b.date).getTime();
+          return dateB - dateA; // For descending order
+        });
+        
+        setWebinars(sortedWebinars);
+        setWebinarData(sortedWebinars);
+        setTagFilteredWebinars(sortedWebinars);
       })
       .catch(error => console.error("Error:", error));
   }, []);
-
-  console.log(webinars)
-  console.log(webinarData)
   return (
     <div>
       {/* Banner component that displays information about the next webinar */}
