@@ -40,6 +40,18 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
     window.location.href = url_enroll;
   };
 
+  // Use French date
+  const dateObj = new Date(date);
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  };
+  const formattedDate = dateObj.toLocaleDateString("fr", options)
+
   // Render the banner with the next webinar's details
   return (
     <div className="banner-container">
@@ -48,7 +60,8 @@ const Banner: React.FC<Props> = ({ webinarData }) => {
         <h2 className="left-block-title">{title}</h2>
         <p className="webinaire-tag">#{tag}</p>
         <p className="left-block-text">{description}</p>
-        <p className="webinaire-date">{moment(date).format("dddd Do MMMM YYYY, h:mm a")}</p>
+        {/* <p className="webinaire-date">{moment(date).format("dddd Do MMMM YYYY, h:mm a")}</p> */}
+        <p className="webinaire-date">{formattedDate}</p>
         <button className="webinaire-button" onClick={handleEnrollClick}>
           Je m'inscris au webinaire
         </button>

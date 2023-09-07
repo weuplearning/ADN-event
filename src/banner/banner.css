@@ -64,3 +64,16 @@
   height: auto;
   object-fit: cover;
 }
+
+@media (max-width: 920px) {
+  .banner-container .right-block {
+    display: none;
+  }
+  .navigation {
+    flex-direction: column;
+    height: unset;
+  }
+  .navigation .navigation__right {
+    margin: 0px 10px 0px 45px;
+  }
+}
