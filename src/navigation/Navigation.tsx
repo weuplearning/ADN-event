@@ -48,26 +48,31 @@ const Navigation: React.FC<Props> = ({ onFilterWebinars, onTagFilterWebinars, we
   
     let filteredWebinars: Webinar[] = [];
 
-    console.log("boooot")
-    console.log(isBootcampClicked)
-  
+    // CA - 23/11/23 - sort WebinarList for event page after selected category
+    const sortedWebinars = [...webinarData].sort((a: Webinar, b: Webinar) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+      return dateB - dateA; 
+    });
+
+
     if (buttonType === "Prochainement") {
       const now = new Date();
-      filteredWebinars = webinarData.filter((webinar) => new Date(webinar.date) > now && webinar.tag !== "Bootcamp");
-      console.log(filteredWebinars)
+      filteredWebinars = sortedWebinars.filter((webinar) => new Date(webinar.date) > now && webinar.tag !== "Bootcamp");
     } else if (buttonType === "Replays webinaires") {
       const today = new Date();
-      filteredWebinars = webinarData.filter((webinar) => new Date(webinar.date) < today && webinar.tag !== "Bootcamp");
-      console.log(filteredWebinars)
+      filteredWebinars = sortedWebinars.filter((webinar) => new Date(webinar.date) < today && webinar.tag !== "Bootcamp");
     } else if (buttonType === "Bootcamp précédent") {
       const today = new Date();
-      filteredWebinars = webinarData.filter((webinar) => new Date(webinar.date) < today && webinar.tag === "Bootcamp");
-      console.log(filteredWebinars)
+      filteredWebinars = sortedWebinars.filter((webinar) => new Date(webinar.date) < today && webinar.tag === "Bootcamp");
     } else {
-      filteredWebinars = webinarData;
-      console.log(filteredWebinars)
+      filteredWebinars = sortedWebinars;
     }
   
+    console.log("boooot")
+    console.log(isBootcampClicked)
+    console.log(filteredWebinars)
+
     // setIsOpen(false);
     setSelectedOptions([]);
     onFilterWebinars(filteredWebinars);
